@@ -1,0 +1,40 @@
+﻿@model IEnumerable<tbl_category>
+@{
+    ViewBag.Title = "list";
+}
+
+<h2>List view</h2>
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <th>
+            Category_ID
+        </th>
+        <th>
+            Name
+
+        </th>
+        <th>
+            Description
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.CategoryID
+
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Description
+            </td>
+        </tr>
+
+    }
+
+</table>
+
