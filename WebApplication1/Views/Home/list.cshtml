@@ -34,11 +34,8 @@
                 @item.Description
             </td>
             <td>
-                @Html.ActionLink("Edit","Edit","Home",null , htmlAttributes : new {@class = "btn btn-primary" })
+                @Html.ActionLink("Edit", "Edit", "Home", new { id = item.CategoryID }, htmlAttributes : new {@class = "btn btn-primary" })
                 @Html.ActionLink("Delete", "Delete", "Home", null, htmlAttributes: new { @class = "btn btn-danger" })
-
-
-
 
             </td>
         </tr>

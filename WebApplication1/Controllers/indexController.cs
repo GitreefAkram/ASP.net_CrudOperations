@@ -47,6 +47,21 @@ namespace WebApplication1.Controllers
 
             return View(list);
         }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            WebAppDbContext db = new WebAppDbContext();
+            var category = db.tbl_category.Find(id);
 
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult Edit(tbl_category category)
+        {
+            WebAppDbContext db = new WebAppDbContext();
+            db.Entry(category).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("List");
+        }
     }
 }
